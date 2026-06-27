@@ -1,10 +1,18 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { AnimatedText } from "./animated-text"
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Speed up from 14s to ~8.75s
+      videoRef.current.playbackRate = 1.6
+    }
+  }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -62,7 +70,7 @@ export function HeroSection() {
             height: `${heightVh}vh`,
           }}
         >
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/af7687fd-f2ad-4f2a-96f0-b56fa7d3769c-08wERpo5U1sktxs1vcRsJW9ueslNZv.mp4" />
+          <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
         </div>
       </div>
 
