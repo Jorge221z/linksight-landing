@@ -8,9 +8,33 @@ export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    if (videoRef.current) {
-      // Speed up from 14s to ~8.75s
-      videoRef.current.playbackRate = 1.6
+    const video = videoRef.current
+    if (video) {
+      video.playbackRate = 1.6
+
+      // Saltar el primer segundo al cargar el vídeo
+      const onLoaded = () => {
+        video.currentTime = 1
+      }
+      
+      // Cuando acabe, volver al segundo 1 (en vez de al 0) para omitir la cámara parada
+      const onEnded = () => {
+        video.currentTime = 1
+        video.play()
+      }
+
+      video.addEventListener('loadedmetadata', onLoaded)
+      video.addEventListener('ended', onEnded)
+      
+      // Si el vídeo ya está cargado cuando se monta el componente
+      if (video.readyState >= 1) {
+        video.currentTime = 1
+      }
+
+      return () => {
+        video.removeEventListener('loadedmetadata', onLoaded)
+        video.removeEventListener('ended', onEnded)
+      }
     }
   }, [])
 
@@ -70,7 +94,7 @@ export function HeroSection() {
             height: `${heightVh}vh`,
           }}
         >
-          <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
+          <video ref={videoRef} autoPlay muted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
         </div>
       </div>
 
