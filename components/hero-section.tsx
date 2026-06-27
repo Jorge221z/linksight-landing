@@ -108,7 +108,11 @@ export function HeroSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[400px]"
               }`}
             >
-              <img src="/images/iphone-frame.png" alt="Application Homie" className="w-full h-auto relative z-10" />
+              <img src="/images/iphone-frame.png" alt="LinkSight App" className="w-full h-auto relative z-10 pointer-events-none" />
+              <div className="absolute top-[2.5%] left-[5.5%] w-[89%] h-[95%] rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden z-20 bg-black">
+                {/* Desplazamos el vídeo hacia arriba un 5% y lo hacemos más alto para recortar la barra de estado superior */}
+                <video autoPlay loop muted playsInline className="absolute w-full h-[105%] -top-[5%] left-0 object-cover" src="/linksight_demo.mp4" />
+              </div>
             </div>
           </div>
         </div>
