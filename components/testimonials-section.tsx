@@ -5,42 +5,42 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    name: "Marie Dupont",
-    role: "Owner in Nice",
-    content: "I rented out my apartment in less than a week. The interface is so intuitive!",
+    name: "Alex",
+    role: "WISP Installer",
+    content: "LinkSight saved me a 2-hour drive to a mountain peak that had no line of sight anyway. Essential tool.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
   {
-    name: "Thomas Martin",
-    role: "Tenant in Paris",
-    content: "Finally a transparent platform. I found my studio without paying agency fees.",
+    name: "Sarah M.",
+    role: "IoT Engineer",
+    content: "Finally, a mobile app that instantly calculates Fresnel zones for our LoRa networks without overpriced desktop software.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
   {
-    name: "Sophie Bernard",
-    role: "Owner in Lyon",
-    content: "The tenant verification system gives me peace of mind. I recommend it 100%!",
+    name: "David K.",
+    role: "Commercial Drone Pilot",
+    content: "Perfect for drone telemetry planning. I always check LinkSight before flying long range to avoid losing connection.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
 ]
 
 const testimonials2 = [
   {
-    name: "Lucas Petit",
-    role: "Tenant in Bordeaux",
-    content: "Best rental experience I've ever had. The process was seamless from start to finish.",
+    name: "Elena R.",
+    role: "Telecommunications Planner",
+    content: "The SRTM90m topography is surprisingly accurate. We use it for initial viability checks.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
   {
-    name: "Emma Laurent",
-    role: "Owner in Marseille",
-    content: "My property was listed and rented within days. Incredible platform!",
+    name: "Mark T.",
+    role: "Ham Radio Operator",
+    content: "Unbelievable that this is free for casual use. It takes all the guesswork out of my weekend deployments.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
   {
-    name: "Antoine Rousseau",
-    role: "Tenant in Toulouse",
-    content: "No hidden fees, no surprises. Exactly what I was looking for in a rental app.",
+    name: "James L.",
+    role: "Wireless Network Architect",
+    content: "Exporting PDF reports on the spot while talking to clients has closed multiple deals for me.",
     avatar: "/placeholder.svg?height=48&width=48",
   },
 ]

@@ -2,45 +2,35 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    question: "How do I post a listing on Homie?",
+    question: "Is it really free?",
     answer:
-      "It's very simple! Create an account, click 'Post a listing', add photos and a description of your property, set the price and availability. Your listing will be live within minutes after verification.",
+      "Yes! You get 5 free calculations every single day, for life. No credit card required. Perfect for hobbyists, drone pilots, and casual planning.",
   },
   {
-    question: "What are the fees for owners?",
+    question: "What is included in LinkSight Pro?",
     answer:
-      "Homie charges a 3% commission only when a rental is confirmed. No listing fees, no mandatory subscription. The Pro plan at $49/month reduces the commission to 2% for multi-property owners.",
+      "LinkSight Pro includes unlimited daily calculations, the ability to generate and export professional PDF feasibility reports with your company logo, and priority support.",
   },
   {
-    question: "How are tenants verified?",
+    question: "Where does the elevation data come from?",
     answer:
-      "Each tenant must provide an ID and proof of income. We verify these documents and assign a trust score. Owners can view the complete profile before accepting a request.",
+      "We use the SRTM90m (Shuttle Radar Topography Mission) global database, which provides reliable and consistent 90-meter resolution topographic data for almost anywhere on Earth.",
   },
   {
-    question: "Are payments secure?",
+    question: "Do I need an internet connection?",
     answer:
-      "Yes, all payments go through our secure platform. Funds are held until check-in confirmation, then released to the owner. In case of disputes, our team intervenes to find a solution.",
-  },
-  {
-    question: "What does the damage insurance cover?",
-    answer:
-      "Our included insurance covers material damage up to $5,000 per rental. It protects owners against accidental damage. A $200 deductible applies in case of a claim.",
-  },
-  {
-    question: "Can I cancel a reservation?",
-    answer:
-      "Cancellation conditions are set by each owner (flexible, moderate, or strict). Refunds are calculated based on these conditions. Force majeure cases may qualify for a full refund.",
+      "Yes. The app downloads the specific elevation profile for your selected path in milliseconds from our high-speed servers, meaning you don't need to store gigabytes of maps on your phone.",
   },
 ]
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-32 px-6 pb-80">
+    <section id="faq" className="py-32 px-6 pb-[30vw]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">Frequently asked questions</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about Homie. Have a question not listed? Contact our support.
+            Everything you need to know about LinkSight. Have a question not listed? Contact our support.
           </p>
         </div>
 

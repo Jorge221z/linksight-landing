@@ -13,10 +13,10 @@ export function AnimatedText({ text, delay = 0 }: AnimatedTextProps) {
 
   return (
     <motion.span
-      className="font-bold text-center text-6xl leading-[0.75] tracking-tighter font-serif text-black lg:text-9xl"
+      className="inline-block"
       initial="hidden"
       animate="visible"
-      style={{ perspective: 400, display: "inline-block" }}
+      style={{ perspective: 400 }}
     >
       {words.map((word, wordIndex) => (
         <span key={wordIndex} style={{ display: "inline-block", whiteSpace: "nowrap" }}>

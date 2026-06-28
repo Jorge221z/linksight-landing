@@ -6,12 +6,10 @@ import { motion } from "framer-motion"
 import { RealtimePropertyCard } from "./realtime-property-card"
 
 const features = [
-  "Create a listing in 5 minutes",
-  "Profile verification included",
-  "Instant messaging",
-  "24/7 support",
-  "No hidden fees",
-  "Secure payment",
+  "Drop pins with exact GPS coordinates.",
+  "5 free calculations every single day.",
+  "Adjustable mast heights and frequencies.",
+  "Visual clear/obstructed indicators.",
 ]
 
 const allTransactions = [
@@ -93,11 +91,10 @@ export function FeaturesSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">
-                Manage your rentals with ease
+                Your RF Dashboard in your pocket
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Track your income, manage reservations, and communicate with tenants from a single intuitive and modern
-                interface.
+                Calculate point-to-point links instantly, check line of sight, and get the information you need right when you're on the mountain or rooftop.
               </p>
             </motion.div>
 
@@ -107,14 +104,15 @@ export function FeaturesSection() {
                   key={index}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.03, x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   viewport={{ once: true }}
-                  className="flex items-center p-3 rounded-xl hover:bg-zinc-50 transition-colors duration-300 gap-2 py-1"
+                  className="group flex items-center p-4 bg-white border border-zinc-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 gap-3 cursor-default"
                 >
-                  <div className="w-6 h-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
+                  <div className="w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors duration-300">
+                    <Check className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors duration-300" strokeWidth={3} />
                   </div>
-                  <span className="text-sm text-foreground">{feature}</span>
+                  <span className="text-sm font-medium text-slate-700 leading-tight">{feature}</span>
                 </motion.div>
               ))}
             </div>

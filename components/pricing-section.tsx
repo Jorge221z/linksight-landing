@@ -1,139 +1,122 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react"
-import { PropertyBookingCard } from "./property-booking-card"
+import React from "react"
+import { motion } from "framer-motion"
 
-const properties = [
+const RouterIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6.01 18H6"/><path d="M10.01 18H10"/><path d="M15 10v4"/><path d="M17.84 7.17a4 4 0 0 0-5.66 0"/><path d="M20.66 4.34a8 8 0 0 0-11.31 0"/></svg>
+)
+
+const RadioIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>
+)
+
+const DroneIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" {...props}>
+    <path d="M13.92,14.88l2.87-1V11a1.92,1.92,0,0,0-1.91-1.92H9.12A1.92,1.92,0,0,0,7.21,11v2.88l2.87,1"/>
+    <circle cx="12" cy="14.88" r="1.92"/>
+    <line x1="7.21" y1="11.04" x2="0.5" y2="11.04"/>
+    <line x1="23.5" y1="11.04" x2="16.79" y2="11.04"/>
+    <line x1="0.5" y1="6.25" x2="6.25" y2="6.25"/>
+    <line x1="17.75" y1="6.25" x2="23.5" y2="6.25"/>
+    <line x1="3.38" y1="6.25" x2="3.38" y2="11.04"/>
+    <line x1="20.63" y1="6.25" x2="20.63" y2="11.04"/>
+    <polyline points="3.38 17.75 5.29 17.75 5.29 14.88 7.21 13.92"/>
+    <polyline points="20.63 17.75 18.71 17.75 18.71 14.88 16.79 13.92"/>
+  </svg>
+)
+
+const SatelliteDishIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M4 10a7.31 7.31 0 0 0 10 10Z"/><path d="m9 15 3-3"/><path d="M17 13a6 6 0 0 0-6-6"/><path d="M21 13A10 10 0 0 0 11 3"/></svg>
+)
+
+const SatelliteIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m13.5 6.5-3.148-3.148a1.205 1.205 0 0 0-1.704 0L6.352 5.648a1.205 1.205 0 0 0 0 1.704L9.5 10.5"/><path d="M16.5 7.5 19 5"/><path d="m17.5 10.5 3.148 3.148a1.205 1.205 0 0 1 0 1.704l-2.296 2.296a1.205 1.205 0 0 1-1.704 0L13.5 14.5"/><path d="M9 21a6 6 0 0 0-6-6"/><path d="M9.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l4.296-4.296a1.205 1.205 0 0 0 0-1.704l-2.296-2.296a1.205 1.205 0 0 0-1.704 0z"/></svg>
+)
+
+const useCases = [
   {
-    propertyName: "Sunset Beach Villa",
-    location: "Malibu, California",
-    duration: "Min. 3 nights",
-    availableDate: "Available now",
-    image: "/images/property-beach-villa.jpg",
-    pricePerNight: 450,
-    propertyType: "Beachfront Villa",
-    features: ["Ocean View", "Private Beach", "Hot Tub", "Chef Kitchen"],
-    amenities: ["Free Wifi", "Parking", "Pool"],
-    rating: 4.9,
+    title: "WISP Operators",
+    icon: RouterIcon,
+    description: "Plan broadband point-to-point microwave links. Calculate tower heights and verify line of sight before sending installation crews to the field.",
+    badge: "5.8 GHz",
   },
   {
-    propertyName: "Mountain Retreat Cabin",
-    location: "Aspen, Colorado",
-    duration: "Min. 2 nights",
-    availableDate: "Dec 15 - Jan 30",
-    image: "/images/property-mountain-cabin.jpg",
-    pricePerNight: 320,
-    propertyType: "Mountain Cabin",
-    features: ["Ski-in/Ski-out", "Fireplace", "Mountain Views", "Game Room"],
-    amenities: ["Free Wifi", "Parking", "4 Guests"],
-    rating: 4.8,
+    title: "Meshtastic & LoRa",
+    icon: RadioIcon,
+    description: "Design off-grid mesh networks and deploy low-power nodes. Guarantee your signal cuts through the terrain for maximum range.",
+    badge: "Sub-GHz (868 MHz)",
   },
   {
-    propertyName: "Downtown Luxury Loft",
-    location: "New York City, NY",
-    duration: "Min. 1 night",
-    availableDate: "Available now",
-    image: "/images/property-city-loft.jpg",
-    pricePerNight: 280,
-    propertyType: "City Loft",
-    features: ["Skyline View", "Rooftop Access", "Designer Interior", "Central Location"],
-    amenities: ["Free Wifi", "2 Guests", "Parking"],
-    rating: 4.7,
+    title: "UAV & Drone Pilots",
+    icon: DroneIcon,
+    description: "Ensure telemetry and video link stability for BVLOS (Beyond Visual Line of Sight) flights by checking terrain obstruction beforehand.",
+    badge: "2.4 GHz",
   },
   {
-    propertyName: "Tuscan Countryside Estate",
-    location: "Florence, Italy",
-    duration: "Min. 4 nights",
-    availableDate: "Available now",
-    image: "/images/property-tuscan-estate.jpg",
-    pricePerNight: 520,
-    propertyType: "Country Estate",
-    features: ["Vineyard Views", "Private Pool", "Wine Cellar", "Olive Grove"],
-    amenities: ["Free Wifi", "Parking", "8 Guests"],
-    rating: 4.9,
+    title: "Starlink & Satellite",
+    icon: SatelliteDishIcon,
+    description: "Find the perfect installation spot. Ensure clear sky views and avoid terrain or canopy obstructions that could drop the connection.",
+    badge: "Ku-Band (12 GHz)",
   },
   {
-    propertyName: "Tropical Paradise Bungalow",
-    location: "Bali, Indonesia",
-    duration: "Min. 2 nights",
-    availableDate: "Available now",
-    image: "/images/property-tropical-bungalow.jpg",
-    pricePerNight: 180,
-    propertyType: "Jungle Bungalow",
-    features: ["Rice Terrace View", "Open Air Living", "Private Garden", "Yoga Deck"],
-    amenities: ["Free Wifi", "Pool", "2 Guests"],
-    rating: 4.8,
-  },
-  {
-    propertyName: "Lakefront Modern House",
-    location: "Lake Tahoe, California",
-    duration: "Min. 3 nights",
-    availableDate: "Year-round",
-    image: "/images/property-lakefront-modern.jpg",
-    pricePerNight: 380,
-    propertyType: "Lakefront Home",
-    features: ["Lake Access", "Private Dock", "Floor-to-ceiling Windows", "Hot Tub"],
-    amenities: ["Free Wifi", "Parking", "6 Guests"],
-    rating: 4.9,
+    title: "RF Engineers",
+    icon: SatelliteIcon,
+    description: "Ultimate flexibility. Input any custom frequency and mast height to analyze specific Fresnel zones for amateur radio or proprietary networks.",
+    badge: "Custom Frequencies",
   },
 ]
 
 export function PricingSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [isHovered, setIsHovered] = useState(false)
-  const positionRef = useRef(0)
-  const animationRef = useRef<number>()
-
-  const duplicatedProperties = [...properties, ...properties, ...properties]
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
-
-    const speed = isHovered ? 0.3 : 1 // Slow down on hover instead of changing animation duration
-    let lastTime = performance.now()
-
-    const animate = (currentTime: number) => {
-      const deltaTime = currentTime - lastTime
-      lastTime = currentTime
-
-      positionRef.current += speed * (deltaTime / 16)
-
-      const totalWidth = scrollContainer.scrollWidth / 3
-
-      if (positionRef.current >= totalWidth) {
-        positionRef.current = 0
-      }
-
-      scrollContainer.style.transform = `translateX(-${positionRef.current}px)`
-      animationRef.current = requestAnimationFrame(animate)
-    }
-
-    animationRef.current = requestAnimationFrame(animate)
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
-    }
-  }, [isHovered])
-
   return (
-    <section id="pricing" className="py-32 overflow-hidden">
+    <section id="use-cases" className="py-32 overflow-hidden bg-zinc-50/50 text-foreground">
       <div className="max-w-7xl mx-auto px-6 text-center mb-20">
-        <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">Featured properties</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Discover handpicked homes from verified owners. Book with confidence.
+        <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">Built for every RF need</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
+          Whether you are deploying enterprise wireless or hobbyist mesh networks, LinkSight provides the precision you need.
         </p>
       </div>
 
-      <div className="relative w-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <div ref={scrollRef} className="flex gap-6" style={{ width: "fit-content" }}>
-          {duplicatedProperties.map((property, index) => (
-            <div key={index} className="flex-shrink-0 w-[85vw] sm:w-[60vw] lg:w-[400px]">
-              <PropertyBookingCard {...property} onBook={() => console.log(`Booking ${property.propertyName}`)} />
-            </div>
-          ))}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          {useCases.map((useCase, index) => {
+            const Icon = useCase.icon
+            
+            // Layout logic: 3 on top, 2 centered below for desktop
+            let colClasses = "md:col-span-1 lg:col-span-2"
+            if (index === 3) {
+              colClasses = "md:col-span-1 lg:col-start-2 lg:col-span-2"
+            }
+            if (index === 4) {
+              // On tablet, the 5th item might span 2 columns to center it
+              colClasses += " md:col-span-2 lg:col-span-2"
+            }
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col ${colClasses}`}
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                    <Icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <span className="px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-medium rounded-full border border-zinc-200">
+                    {useCase.badge}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-medium mb-4 text-slate-900">{useCase.title}</h3>
+                <p className="text-muted-foreground leading-relaxed flex-1">
+                  {useCase.description}
+                </p>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

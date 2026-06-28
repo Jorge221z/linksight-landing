@@ -33,18 +33,18 @@ function useCountUp(end: number, duration = 2000, suffix = "") {
 export function StatsSection() {
   const [isVisible, setIsVisible] = useState(false)
 
-  const homes = useCountUp(15, 2000, "K+")
-  const cities = useCountUp(120, 2000, "")
-  const users = useCountUp(50, 2000, "K+")
+  const resolution = useCountUp(90, 2000, "m")
+  const coverage = useCountUp(100, 2000, "%")
+  const latency = useCountUp(1, 2000, "s")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
           setIsVisible(true)
-          homes.start()
-          cities.start()
-          users.start()
+          resolution.start()
+          coverage.start()
+          latency.start()
         }
       },
       { threshold: 0.3 },
@@ -63,22 +63,24 @@ export function StatsSection() {
           <div
             className={`text-center transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">{homes.value}</p>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Properties Listed</p>
+            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">{resolution.value}</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider">Topographic Resolution</p>
           </div>
 
           <div
             className={`text-center transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">{cities.value}</p>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Cities</p>
+            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">{coverage.value}</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider">Global Coverage</p>
           </div>
 
           <div
             className={`text-center transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">{users.value}</p>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Users</p>
+            <p className="font-light text-foreground mb-2 text-6xl md:text-7xl leading-none">
+              &lt; {latency.value}
+            </p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider">Calculation Latency</p>
           </div>
         </div>
       </div>

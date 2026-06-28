@@ -9,8 +9,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Homie - Location de maisons entre particuliers",
-  description: "Trouvez votre maison idéale ou mettez la vôtre en location. Simple, sécurisé, entre particuliers.",
+  title: "LinkSight - RF Link Planning in Your Pocket",
+  description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone.",
     generator: 'v0.app'
 }
 

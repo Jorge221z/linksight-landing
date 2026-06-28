@@ -44,20 +44,15 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           <a href="#" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer">
-            <svg
-              className={`w-6 h-6 transition-colors duration-300 ${isScrolled ? "text-black" : "text-foreground"}`}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
+            <img 
+              src="/images/ic_logo.webp" 
+              alt="LinkSight Logo" 
+              className="w-10 h-10 object-cover rounded-xl shadow-sm border border-zinc-100 bg-white"
+            />
             <span
               className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-black" : "text-foreground"}`}
             >
-              Homie
+              LinkSight
             </span>
           </a>
 
@@ -125,7 +120,7 @@ export function Header() {
                   isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
                 }`}
               >
-                List a property
+                Join Closed Beta
               </span>
               <span className="w-8 h-8 rounded-full flex items-center justify-center relative z-10">
                 <ArrowRight
@@ -222,7 +217,7 @@ export function Header() {
                     isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
                   }`}
                 >
-                  List a property
+                  Join Closed Beta
                 </span>
                 <span className="w-8 h-8 rounded-full flex items-center justify-center relative z-10">
                   <ArrowRight

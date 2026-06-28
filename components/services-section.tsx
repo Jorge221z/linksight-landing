@@ -1,23 +1,23 @@
 "use client"
 
-import { Home, Key, Shield } from "lucide-react"
+import { Globe, Radio, FileText } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
 const services = [
   {
-    icon: Home,
-    title: "Detailed listings",
-    description: "HD photos, 360° virtual tours, and complete descriptions for every property.",
+    icon: Globe,
+    title: "Global Topography",
+    description: "Integrated SRTM90m data for instant elevation maps without relying on heavy desktop software.",
   },
   {
-    icon: Key,
-    title: "Key management",
-    description: "Secure key handover system and real-time check-in/check-out tracking.",
+    icon: Radio,
+    title: "Fresnel Intelligence",
+    description: "Precise Fresnel zone algorithms for 2.4GHz, 5.8GHz, LoRa and more.",
   },
   {
-    icon: Shield,
-    title: "Secure payments",
-    description: "Protected transactions with tenant guarantee and damage insurance included.",
+    icon: FileText,
+    title: "Pro PDF Reports",
+    description: "Generate and share feasibility studies with your client or team in a single tap.",
   },
 ]
 
@@ -78,13 +78,7 @@ export function ServicesSection() {
   }, [])
 
   return (
-    <section id="how-it-works" className="py-32 px-6 pb-24 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 flex justify-center pointer-events-none z-0">
-        <span className="font-bold text-center text-[18vw] sm:text-[16vw] md:text-[14vw] lg:text-[12vw] leading-none tracking-tighter text-zinc-100 whitespace-nowrap">
-          MISSION
-        </span>
-      </div>
-
+    <section id="how-it-works" className="py-24 px-6 relative overflow-hidden">
       <style jsx>{`
         @keyframes drawPath {
           from {
@@ -104,48 +98,11 @@ export function ServicesSection() {
           animation: drawPath 2s ease-out forwards;
         }
       `}</style>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div ref={sectionRef} className="relative px-6 lg:px-8 py-16 lg:py-10 mb-32 overflow-hidden rounded-3xl">
-          {/* Background image that spans full width */}
-          <div className="absolute inset-0 w-full h-full">
-            <img
-              src="/images/7aecbceb-cbd3-4cbd-901c-dd0125d41525.png"
-              alt="Beautiful house"
-              className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
-                isVisible ? "scale-100" : "scale-110"
-              }`}
-            />
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/20" />
-          </div>
-
-          {/* Text content on top */}
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-1 lg:order-2">
-              <p className="text-sm uppercase tracking-[0.2em] text-white/80 font-medium mb-4">Our mission</p>
-              <h2 className="font-sans md:text-4xl lg:text-5xl font-medium text-white text-balance mb-8 text-5xl">
-                Simplifying peer-to-peer rentals
-              </h2>
-              <div className="space-y-6 text-white/90 leading-relaxed">
-                <p>
-                  At Homie, we believe renting a home should be as simple as booking a restaurant. Our platform connects
-                  owners and tenants directly, with no agency fees.
-                </p>
-                <p>
-                  Every listing is verified, every transaction secured. We've reimagined the rental experience to make
-                  it transparent, fast, and human.
-                </p>
-              </div>
-              <div className="mt-10"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">Everything you need</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-normal mb-6 text-balance font-serif">Advanced RF Tools</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A complete platform to manage your rentals from A to Z, whether you're an owner or a tenant.
+            Everything you need to plan, calculate, and document your wireless links from anywhere.
           </p>
         </div>
 

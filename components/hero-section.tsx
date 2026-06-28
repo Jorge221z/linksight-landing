@@ -1,6 +1,10 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
 import { AnimatedText } from "./animated-text"
+import { ArrowUpRight, ArrowRight } from "lucide-react"
+import { Space_Grotesk } from "next/font/google"
+
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -15,17 +19,22 @@ export function HeroSection() {
       // Saltar el primer segundo al cargar el vídeo
       const onLoaded = () => {
         video.currentTime = 1
+        video.play().catch(e => console.log("Autoplay prevented:", e))
       }
       
       // Cuando acabe, volver al segundo 1 (en vez de al 0) para omitir la cámara parada
       const onEnded = () => {
         video.currentTime = 1
-        video.play()
+        video.play().catch(e => console.log("Autoplay prevented:", e))
       }
 
       video.addEventListener('loadedmetadata', onLoaded)
       video.addEventListener('ended', onEnded)
       
+      // Intentar reproducir explícitamente en el primer render para navegadores estrictos como Chrome
+      video.muted = true
+      video.play().catch(e => console.log("Autoplay prevented:", e))
+
       // Si el vídeo ya está cargado cuando se monta el componente
       if (video.readyState >= 1) {
         video.currentTime = 1
@@ -94,7 +103,7 @@ export function HeroSection() {
             height: `${heightVh}vh`,
           }}
         >
-          <video ref={videoRef} autoPlay muted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
+          <video ref={videoRef} autoPlay muted defaultMuted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
         </div>
       </div>
 
@@ -110,7 +119,7 @@ export function HeroSection() {
           className="block text-white font-bold text-[28vw] sm:text-[25vw] md:text-[22vw] lg:text-[20vw] tracking-tighter select-none text-center leading-none"
           style={{ marginBottom: "0" }}
         >
-          HOMIE
+          LINKSIGHT
         </span>
       </div>
 
@@ -119,8 +128,9 @@ export function HeroSection() {
           <div
             className={`transition-all duration-1000 delay-[800ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
           >
-            <h1 className="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] 2xl:text-[8.5rem] font-normal leading-tight mb-6 w-full px-4 max-w-6xl mx-auto text-balance">
-              <AnimatedText text="Find your home away from home" delay={0.3} />
+            <h1 className={`${spaceGrotesk.className} text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7.5rem] font-bold leading-tight mb-6 w-full px-4 max-w-[100vw] mx-auto text-black flex flex-col`}>
+              <span className="whitespace-nowrap"><AnimatedText text="Flawless Line of Sight." delay={0.3} /></span>
+              <span className="whitespace-nowrap"><AnimatedText text="Anywhere on Earth." delay={0.5} /></span>
             </h1>
           </div>
         </div>
@@ -135,7 +145,7 @@ export function HeroSection() {
               <img src="/images/iphone-frame.png" alt="LinkSight App" className="w-full h-auto relative z-10 pointer-events-none" />
               <div className="absolute top-[2.5%] left-[5.5%] w-[89%] h-[95%] rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden z-20 bg-black">
                 {/* Desplazamos el vídeo hacia arriba un 5% y lo hacemos más alto para recortar la barra de estado superior */}
-                <video autoPlay loop muted playsInline className="absolute w-full h-[105%] -top-[5%] left-0 object-cover" src="/linksight_demo.mp4" />
+                <video autoPlay loop muted defaultMuted playsInline className="absolute w-full h-[105%] -top-[5%] left-0 object-cover" src="/linksight_demo.mp4" />
               </div>
             </div>
           </div>
