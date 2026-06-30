@@ -5,9 +5,18 @@ import { useState } from "react"
 import { Menu, X, ArrowUpRight, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog"
+import { BetaForm } from "@/components/beta-form"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [betaOpen, setBetaOpen] = useState(false)
   const isScrolled = true
   const router = useRouter()
 
@@ -40,6 +49,7 @@ export function Header() {
   }
 
   return (
+    <>
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "px-4 pt-4" : ""}`}>
       <div
         className={`max-w-7xl mx-auto transition-all duration-300 rounded-2xl ${
@@ -111,7 +121,8 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-1">
             <button
-              className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 transition-all duration-300 group overflow-hidden ${
+              onClick={() => setBetaOpen(true)}
+              className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 transition-all duration-300 group overflow-hidden cursor-pointer ${
                 isScrolled ? "border-zinc-300" : "border-border"
               }`}
             >
@@ -205,7 +216,8 @@ export function Header() {
               className={`flex flex-col gap-3 mt-4 pt-4 border-t ${isScrolled ? "border-zinc-200" : "border-border"}`}
             >
               <button
-                className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 w-fit transition-all duration-300 group overflow-hidden ${
+                onClick={() => { setBetaOpen(true); setIsOpen(false) }}
+                className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 w-fit transition-all duration-300 group overflow-hidden cursor-pointer ${
                   isScrolled ? "border-zinc-300" : "border-border"
                 }`}
               >
@@ -239,5 +251,24 @@ export function Header() {
         )}
       </div>
     </header>
+
+    {/* Modal Beta */}
+    <Dialog open={betaOpen} onOpenChange={setBetaOpen}>
+      <DialogContent className="sm:max-w-md rounded-2xl border border-zinc-200 p-6 sm:p-8">
+        <DialogHeader className="text-center sm:text-center mb-6">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-500 mb-3">
+            Closed Beta
+          </p>
+          <DialogTitle className="text-2xl font-normal font-serif text-zinc-900 leading-snug">
+            Get early access to LinkSight
+          </DialogTitle>
+          <DialogDescription className="text-zinc-500 text-sm leading-relaxed mt-2">
+            Join the closed beta and start calculating line of sight with unprecedented precision. We&apos;ll send you the Google Play invite directly.
+          </DialogDescription>
+        </DialogHeader>
+        <BetaForm />
+      </DialogContent>
+    </Dialog>
+    </>
   )
 }
