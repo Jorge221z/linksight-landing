@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Twitter, Linkedin, Instagram, Facebook, Github } from "lucide-react"
+import { Linkedin, Github } from "lucide-react"
 import Image from "next/image"
 
 interface FooterProps {
@@ -60,32 +60,7 @@ export function Footer({ minimal = false }: FooterProps) {
               <p className="text-sm text-muted-foreground mb-6 max-w-xs">
                 Line of sight and Fresnel zone calculator for RF engineers.
               </p>
-              <div className="flex gap-4">
-                <Link
-                  href="#"
-                  className="w-9 h-9 border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-                >
-                  <Twitter className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="#"
-                  className="w-9 h-9 border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="#"
-                  className="w-9 h-9 border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-                >
-                  <Instagram className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="#"
-                  className="w-9 h-9 border border-border rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-                >
-                  <Facebook className="w-4 h-4" />
-                </Link>
-              </div>
+
             </div>
 
             {/* Columna Central: Product & Support */}

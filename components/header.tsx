@@ -64,15 +64,6 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <a
-              href="#how-it-works"
-              onClick={(e) => handleSmoothScroll(e, "how-it-works")}
-              className={`text-sm transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Mission
-            </a>
-            <a
               href="#features"
               onClick={(e) => handleSmoothScroll(e, "features")}
               className={`text-sm transition-colors cursor-pointer ${
@@ -80,6 +71,24 @@ export function Header() {
               }`}
             >
               Features
+            </a>
+            <a
+              href="#use-cases"
+              onClick={(e) => handleSmoothScroll(e, "use-cases")}
+              className={`text-sm transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Use Cases
+            </a>
+            <a
+              href="#tools"
+              onClick={(e) => handleSmoothScroll(e, "tools")}
+              className={`text-sm transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Tools
             </a>
             <Link
               href="/pricing"
@@ -89,15 +98,6 @@ export function Header() {
             >
               Pricing
             </Link>
-            <a
-              href="#testimonials"
-              onClick={(e) => handleSmoothScroll(e, "testimonials")}
-              className={`text-sm transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Reviews
-            </a>
             <a
               href="#faq"
               onClick={(e) => handleSmoothScroll(e, "faq")}
@@ -157,15 +157,6 @@ export function Header() {
             }`}
           >
             <a
-              href="#how-it-works"
-              onClick={(e) => handleSmoothScroll(e, "how-it-works")}
-              className={`transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Mission
-            </a>
-            <a
               href="#features"
               onClick={(e) => handleSmoothScroll(e, "features")}
               className={`transition-colors cursor-pointer ${
@@ -173,6 +164,24 @@ export function Header() {
               }`}
             >
               Features
+            </a>
+            <a
+              href="#use-cases"
+              onClick={(e) => handleSmoothScroll(e, "use-cases")}
+              className={`transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Use Cases
+            </a>
+            <a
+              href="#tools"
+              onClick={(e) => handleSmoothScroll(e, "tools")}
+              className={`transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Tools
             </a>
             <Link
               href="/pricing"
@@ -183,15 +192,6 @@ export function Header() {
             >
               Pricing
             </Link>
-            <a
-              href="#testimonials"
-              onClick={(e) => handleSmoothScroll(e, "testimonials")}
-              className={`transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Reviews
-            </a>
             <a
               href="#faq"
               onClick={(e) => handleSmoothScroll(e, "faq")}

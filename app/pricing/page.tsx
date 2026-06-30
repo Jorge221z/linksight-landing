@@ -62,7 +62,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm">Standard resolution data</span>
+                      <span className="text-sm">Global topographic coverage (SRTM90m)</span>
                     </li>
                   </ul>
                 </div>
@@ -90,13 +90,12 @@ export default function PricingPage() {
                   </p>
                   
                   <ul className="space-y-4 mb-10 text-slate-700">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm font-medium">Unlimited LOS calculations</span>
+                    <li className="mb-4">
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400">All included in Basic, plus:</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm">Global topographic coverage (SRTM90m)</span>
+                      <span className="text-sm">Unlimited LOS calculations</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />

@@ -78,7 +78,7 @@ export function ServicesSection() {
   }, [])
 
   return (
-    <section id="how-it-works" className="py-24 px-6 relative overflow-hidden">
+    <section id="tools" className="py-24 px-6 relative overflow-hidden">
       <style jsx>{`
         @keyframes drawPath {
           from {
