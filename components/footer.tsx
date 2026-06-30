@@ -16,8 +16,8 @@ const footerLinks = {
     { label: "Blog", href: "#" },
   ],
   legal: [
-    { label: "Terms", href: "#" },
-    { label: "Privacy", href: "#" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
     { label: "Cookies", href: "#" },
     { label: "Legal", href: "#" },
   ],
@@ -29,18 +29,26 @@ const footerLinks = {
   ],
 }
 
-export function Footer() {
+interface FooterProps {
+  minimal?: boolean
+}
+
+export function Footer({ minimal = false }: FooterProps) {
   return (
     <div className="relative">
-      <div className="absolute -top-[20vw] left-0 right-0 w-full h-[50vw] z-0 overflow-hidden pointer-events-none">
-        <Image src="/images/footer-bg.jpg" alt="Telecommunications tower at sunset with digital topographic lines" fill className="object-cover" priority />
-      </div>
+      {!minimal && (
+        <>
+          <div className="absolute -top-[20vw] left-0 right-0 w-full h-[50vw] z-0 overflow-hidden pointer-events-none">
+            <Image src="/images/footer-bg.jpg" alt="Telecommunications tower at sunset with digital topographic lines" fill className="object-cover" priority />
+          </div>
 
-      <div className="absolute -top-[15vw] left-0 right-0 flex items-end justify-center overflow-visible pointer-events-none z-10">
-        <h2 className="font-bold text-center text-[20vw] sm:text-[18vw] md:text-[16vw] lg:text-[14vw] leading-[0.85] tracking-tighter text-white whitespace-nowrap">
-          LINKSIGHT
-        </h2>
-      </div>
+          <div className="absolute -top-[15vw] left-0 right-0 flex items-end justify-center overflow-visible pointer-events-none z-10">
+            <h2 className="font-bold text-center text-[20vw] sm:text-[18vw] md:text-[16vw] lg:text-[14vw] leading-[0.85] tracking-tighter text-white whitespace-nowrap">
+              LINKSIGHT
+            </h2>
+          </div>
+        </>
+      )}
 
       <footer id="contact" className="relative z-20 border-t border-border py-16 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
@@ -164,6 +172,14 @@ export function Footer() {
 
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-muted-foreground">© 2026 LinkSight. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Terms of Service
+              </Link>
+            </div>
             <p className="text-xs text-muted-foreground">LinkSight - RF Planning Tools</p>
           </div>
         </div>

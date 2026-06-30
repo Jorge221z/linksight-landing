@@ -3,10 +3,13 @@
 import type React from "react"
 import { useState } from "react"
 import { Menu, X, ArrowUpRight, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const isScrolled = true
+  const router = useRouter()
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
@@ -21,6 +24,9 @@ export function Header() {
         top: offsetPosition,
         behavior: "smooth",
       })
+      setIsOpen(false)
+    } else {
+      router.push(`/#${targetId}`)
       setIsOpen(false)
     }
   }
@@ -75,15 +81,14 @@ export function Header() {
             >
               Features
             </a>
-            <a
-              href="#pricing"
-              onClick={(e) => handleSmoothScroll(e, "pricing")}
+            <Link
+              href="/pricing"
               className={`text-sm transition-colors cursor-pointer ${
                 isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Properties
-            </a>
+              Pricing
+            </Link>
             <a
               href="#testimonials"
               onClick={(e) => handleSmoothScroll(e, "testimonials")}
@@ -169,15 +174,15 @@ export function Header() {
             >
               Features
             </a>
-            <a
-              href="#pricing"
-              onClick={(e) => handleSmoothScroll(e, "pricing")}
+            <Link
+              href="/pricing"
+              onClick={() => setIsOpen(false)}
               className={`transition-colors cursor-pointer ${
                 isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Properties
-            </a>
+              Pricing
+            </Link>
             <a
               href="#testimonials"
               onClick={(e) => handleSmoothScroll(e, "testimonials")}
