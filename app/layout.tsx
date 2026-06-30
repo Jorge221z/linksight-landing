@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en" style={{ colorScheme: "light" }}>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
