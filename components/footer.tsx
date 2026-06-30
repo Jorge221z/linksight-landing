@@ -1,33 +1,6 @@
 import Link from "next/link"
-import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react"
+import { Twitter, Linkedin, Instagram, Facebook, Github } from "lucide-react"
 import Image from "next/image"
-
-const footerLinks = {
-  product: [
-    { label: "Search", href: "#" },
-    { label: "List", href: "#" },
-    { label: "Pricing", href: "#" },
-    { label: "App", href: "#" },
-  ],
-  company: [
-    { label: "About", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Press", href: "#" },
-    { label: "Blog", href: "#" },
-  ],
-  legal: [
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Cookies", href: "#" },
-    { label: "Legal", href: "#" },
-  ],
-  support: [
-    { label: "Help Center", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "FAQ", href: "#" },
-    { label: "Report", href: "#" },
-  ],
-}
 
 interface FooterProps {
   minimal?: boolean
@@ -39,7 +12,13 @@ export function Footer({ minimal = false }: FooterProps) {
       {!minimal && (
         <>
           <div className="absolute -top-[20vw] left-0 right-0 w-full h-[50vw] z-0 overflow-hidden pointer-events-none">
-            <Image src="/images/footer-bg.jpg" alt="Telecommunications tower at sunset with digital topographic lines" fill className="object-cover" priority />
+            <Image
+              src="/images/footer-bg.jpg"
+              alt="Telecommunications tower at sunset with digital topographic lines"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
 
           <div className="absolute -top-[15vw] left-0 right-0 flex items-end justify-center overflow-visible pointer-events-none z-10">
@@ -52,7 +31,9 @@ export function Footer({ minimal = false }: FooterProps) {
 
       <footer id="contact" className="relative z-20 border-t border-border py-16 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            
+            {/* Columna Izquierda: Marca */}
             <div>
               <Link href="#" className="flex items-center gap-2 mb-4 group w-fit">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -68,15 +49,17 @@ export function Footer({ minimal = false }: FooterProps) {
                     strokeLinejoin="round"
                     className="text-white"
                   >
-                    <path d="M4 10a7.31 7.31 0 0 0 10 10Z"/>
-                    <path d="m9 15 3-3"/>
-                    <path d="M17 13a6 6 0 0 0-6-6"/>
-                    <path d="M21 13A10 10 0 0 0 11 3"/>
+                    <path d="M4 10a7.31 7.31 0 0 0 10 10Z" />
+                    <path d="m9 15 3-3" />
+                    <path d="M17 13a6 6 0 0 0-6-6" />
+                    <path d="M21 13A10 10 0 0 0 11 3" />
                   </svg>
                 </div>
                 <span className="text-base font-medium text-foreground">LinkSight</span>
               </Link>
-              <p className="text-sm text-muted-foreground mb-6">Line of sight and Fresnel zone calculator for RF engineers.</p>
+              <p className="text-sm text-muted-foreground mb-6 max-w-xs">
+                Line of sight and Fresnel zone calculator for RF engineers.
+              </p>
               <div className="flex gap-4">
                 <Link
                   href="#"
@@ -105,82 +88,105 @@ export function Footer({ minimal = false }: FooterProps) {
               </div>
             </div>
 
+            {/* Columna Central: Product & Support */}
             <div>
-              <h4 className="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">Product</h4>
+              <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+                Product & Support
+              </h4>
               <ul className="space-y-3">
-                {footerLinks.product.map((link, i) => (
-                  <li key={i}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    href="/pricing"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#faq"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:jorgemunoz.labs@gmail.com"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
               </ul>
             </div>
 
+            {/* Columna Derecha: Legal */}
             <div>
-              <h4 className="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">Company</h4>
+              <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+                Legal
+              </h4>
               <ul className="space-y-3">
-                {footerLinks.company.map((link, i) => (
-                  <li key={i}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    href="/privacy"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">Legal</h4>
-              <ul className="space-y-3">
-                {footerLinks.legal.map((link, i) => (
-                  <li key={i}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">Support</h4>
-              <ul className="space-y-3">
-                {footerLinks.support.map((link, i) => (
-                  <li key={i}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
-          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-muted-foreground">© 2026 LinkSight. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
+          {/* Barra Inferior */}
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <p className="text-xs text-muted-foreground">
+              © 2026 LinkSight. All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 text-xs text-zinc-500">
+              <span>
+                Designed & built by{" "}
+                <a
+                  href="https://jorgemunoz.pro/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground underline decoration-zinc-400 underline-offset-2 transition-colors font-medium"
+                >
+                  Jorge Muñoz
+                </a>
+              </span>
+              <span className="text-zinc-300 hidden sm:inline">|</span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://github.com/Jorge221z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jorge-mu%C3%B1oz-castillo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
-            <p className="text-xs text-muted-foreground">LinkSight - RF Planning Tools</p>
           </div>
         </div>
       </footer>
