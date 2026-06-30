@@ -25,8 +25,8 @@ export function IntroSection() {
 
   return (
     <section className="py-32 px-6 pb-16 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 flex justify-center pointer-events-none z-0">
-        <span className="font-bold text-center text-[18vw] sm:text-[16vw] md:text-[14vw] lg:text-[12vw] leading-none tracking-tighter text-zinc-100 whitespace-nowrap">
+      <div className="absolute top-0 left-0 right-0 hidden sm:flex justify-center pointer-events-none z-0">
+        <span className="font-bold text-center text-[14vw] md:text-[12vw] leading-none tracking-tighter text-zinc-200/80 whitespace-nowrap">
           PRECISION
         </span>
       </div>

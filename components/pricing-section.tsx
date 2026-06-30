@@ -54,12 +54,6 @@ const useCases = [
     badge: "2.4 GHz",
   },
   {
-    title: "Starlink & Satellite",
-    icon: SatelliteDishIcon,
-    description: "Find the perfect installation spot. Ensure clear sky views and avoid terrain or canopy obstructions that could drop the connection.",
-    badge: "Ku-Band (12 GHz)",
-  },
-  {
     title: "RF Engineers",
     icon: SatelliteIcon,
     description: "Ultimate flexibility. Input any custom frequency and mast height to analyze specific Fresnel zones for amateur radio or proprietary networks.",
@@ -78,20 +72,11 @@ export function PricingSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon
+            const isLongBadge = useCase.badge.length > 10
             
-            // Layout logic: 3 on top, 2 centered below for desktop
-            let colClasses = "md:col-span-1 lg:col-span-2"
-            if (index === 3) {
-              colClasses = "md:col-span-1 lg:col-start-2 lg:col-span-2"
-            }
-            if (index === 4) {
-              // On tablet, the 5th item might span 2 columns to center it
-              colClasses += " md:col-span-2 lg:col-span-2"
-            }
-
             return (
               <motion.div
                 key={index}
@@ -99,13 +84,13 @@ export function PricingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col ${colClasses}`}
+                className="bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-[border-color,box-shadow] duration-300 group flex flex-col"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                     <Icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-medium rounded-full border border-zinc-200">
+                  <span className={`px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-medium rounded-full border border-zinc-200 whitespace-nowrap ${isLongBadge ? "-mr-3" : ""}`}>
                     {useCase.badge}
                   </span>
                 </div>

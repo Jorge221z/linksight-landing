@@ -102,7 +102,7 @@ export function HeroSection() {
       </div>
 
       <div
-        className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-[5] flex items-end justify-center"
+        className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-[5] hidden sm:flex items-end justify-center"
         style={{
           transform: `translateY(${scrollProgress * 150}px)`,
           opacity: 1 - scrollProgress * 0.8,
@@ -110,7 +110,7 @@ export function HeroSection() {
         }}
       >
         <span
-          className="block text-white font-bold text-[28vw] sm:text-[25vw] md:text-[22vw] lg:text-[20vw] tracking-tighter select-none text-center leading-none"
+          className="block text-zinc-200/80 font-bold text-[28vw] sm:text-[25vw] md:text-[22vw] lg:text-[20vw] tracking-tighter select-none text-center leading-none"
           style={{ marginBottom: "0" }}
         >
           LINKSIGHT
