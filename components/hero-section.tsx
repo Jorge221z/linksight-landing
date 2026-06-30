@@ -84,20 +84,23 @@ export function HeroSection() {
 
   const scale = 1 - easeOutQuad(scrollProgress) * 0.15
   const borderRadius = easeOutCubic(scrollProgress) * 48
-  const heightVh = 100 - easeOutQuad(scrollProgress) * 37.5
+  const clipBottom = easeOutQuad(scrollProgress) * 37.5
 
   return (
     <section className="pt-32 pb-12 px-6 min-h-screen flex items-center relative overflow-hidden">
       <div className="absolute inset-0 top-0">
         <div
-          className="w-full will-change-transform overflow-hidden"
+          className="w-full will-change-transform"
           style={{
             transform: `scale(${scale})`,
-            borderRadius: `${borderRadius}px`,
-            height: `${heightVh}vh`,
+            height: "100vh",
+            clipPath: `inset(0% 0% ${clipBottom}% 0% round ${borderRadius}px)`,
           }}
         >
-          <video ref={videoRef} autoPlay muted defaultMuted playsInline className="w-full h-full object-cover" src="/hero-bg.mp4" />
+          <video ref={videoRef} autoPlay muted defaultMuted playsInline loop className="w-full h-full object-cover">
+            <source src="/hero-bg.webm" type="video/webm" />
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
