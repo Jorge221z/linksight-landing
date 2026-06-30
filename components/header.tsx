@@ -50,10 +50,15 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           <a href="#" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer">
-            <img 
-              src="/images/ic_logo.webp" 
-              alt="LinkSight Logo" 
-              className="w-10 h-10 object-cover rounded-xl shadow-sm border border-zinc-100 bg-white"
+            <img
+              src="/images/ic_logo_playstore.png"
+              alt="LinkSight Logo"
+              className="w-10 h-10 object-cover rounded-xl shadow-sm md:hidden"
+            />
+            <img
+              src="/images/ic_logo.webp"
+              alt="LinkSight Logo"
+              className="w-10 h-10 object-cover rounded-xl shadow-sm border border-zinc-100 bg-white hidden md:block"
             />
             <span
               className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-black" : "text-foreground"}`}
