@@ -50,8 +50,8 @@ export async function submitToBeta(email: string): Promise<ActionResult> {
     }
 
     return { success: true }
-  } catch (err) {
+  } catch (err: any) {
     console.error("Native error in submitToBeta Server Action:", err)
-    return { error: "Network error" }
+    return { error: `Network error: ${err?.message || String(err)}` }
   }
 }
