@@ -10,7 +10,6 @@ import { Loader2, CheckCircle2 } from "lucide-react"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { submitToBeta } from "@/app/actions/joinBeta"
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -32,15 +31,35 @@ export function BetaForm() {
   async function onSubmit(values: FormValues) {
     setServerError(null)
     try {
-      const result = await submitToBeta(values.email)
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+      if (!accessKey) {
+        setServerError("Error: NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY is missing in Vercel config.")
+        return
+      }
 
-      if ("error" in result) {
-        setServerError(result.error)
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "New Tester for LinkSight Beta",
+          email: values.email,
+          botcheck: false,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok || data.success === false) {
+        setServerError(data.message || "Something went wrong")
       } else {
         setIsSuccess(true)
       }
-    } catch {
-      setServerError("Something went wrong")
+    } catch (err: any) {
+      setServerError(err?.message || "Something went wrong")
     }
   }
 
