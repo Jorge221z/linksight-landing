@@ -58,7 +58,7 @@ export function Footer({ minimal = false }: FooterProps) {
                 <span className="text-base font-medium text-foreground">LinkSight</span>
               </Link>
               <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-                Line of sight and Fresnel zone calculator for RF engineers.
+                Precision RF planning, right in your pocket.
               </p>
 
             </div>

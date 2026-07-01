@@ -5,7 +5,7 @@ export function CTASection() {
     <section className="py-32 px-6 relative overflow-hidden">
 
       {/* Texto decorativo de fondo */}
-      <div className="absolute inset-0 flex items-start justify-center pt-[18%] pointer-events-none select-none">
+      <div className="absolute inset-0 hidden lg:flex items-start justify-center pt-[18%] pointer-events-none select-none">
         <span className="font-bold text-center text-[14vw] md:text-[12vw] leading-none tracking-tighter text-zinc-200/90 whitespace-nowrap">
           CALCULATE
         </span>
