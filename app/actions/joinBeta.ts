@@ -33,6 +33,9 @@ export async function submitToBeta(email: string): Promise<ActionResult> {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Origin: "https://linksight.app",
+        Referer: "https://linksight.app/",
       },
       cache: "no-store",
       body: JSON.stringify({
@@ -41,6 +44,13 @@ export async function submitToBeta(email: string): Promise<ActionResult> {
         email: validEmail,
       }),
     })
+
+    const contentType = response.headers.get("content-type") || ""
+    if (!contentType.includes("application/json")) {
+      const rawText = await response.text()
+      console.error(`Non-JSON response (Status ${response.status}):`, rawText.slice(0, 300))
+      return { error: `Server error ${response.status}: Response is not JSON.` }
+    }
 
     const data = await response.json()
 
