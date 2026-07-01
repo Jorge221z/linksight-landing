@@ -34,8 +34,8 @@ export async function submitToBeta(email: string): Promise<ActionResult> {
         "Content-Type": "application/json",
         Accept: "application/json",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Origin: "https://linksight.app",
-        Referer: "https://linksight.app/",
+        Origin: "https://linksightapp.com",
+        Referer: "https://linksightapp.com/",
       },
       cache: "no-store",
       body: JSON.stringify({
