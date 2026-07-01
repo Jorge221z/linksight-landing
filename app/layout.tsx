@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://linksight.app"),
+  metadataBase: new URL("https://linksightapp.com"),
   title: {
     default: "LinkSight - RF Link Planning in Your Pocket",
     template: "%s | LinkSight",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LinkSight - RF Link Planning in Your Pocket",
     description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
-    url: "https://linksight.app",
+    url: "https://linksightapp.com",
     siteName: "LinkSight",
     images: [
       {

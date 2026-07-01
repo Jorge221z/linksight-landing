@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://linksight.app/sitemap.xml",
+    sitemap: "https://linksightapp.com/sitemap.xml",
   }
 }
