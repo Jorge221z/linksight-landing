@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Menu, X, ArrowUpRight, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import {
   Dialog,
   DialogContent,
@@ -19,6 +19,7 @@ export function Header() {
   const [betaOpen, setBetaOpen] = useState(false)
   const isScrolled = true
   const router = useRouter()
+  const pathname = usePathname()
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
@@ -41,11 +42,13 @@ export function Header() {
   }
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    if (pathname === "/") {
+      e.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
   }
 
   return (
@@ -59,7 +62,7 @@ export function Header() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <a href="#" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer">
+          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer">
             <img
               src="/images/ic_logo_playstore.png"
               alt="LinkSight Logo"
@@ -70,7 +73,7 @@ export function Header() {
             >
               LinkSight
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-8">
             <a

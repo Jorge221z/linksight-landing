@@ -35,7 +35,7 @@ export function Footer({ minimal = false }: FooterProps) {
             
             {/* Columna Izquierda: Marca */}
             <div>
-              <Link href="#" className="flex items-center gap-2 mb-4 group w-fit">
+              <Link href="/" className="flex items-center gap-2 mb-4 group w-fit">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
