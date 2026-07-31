@@ -67,10 +67,15 @@ export default function PricingPage() {
                   </ul>
                 </div>
 
-                <button className="w-full flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-800 rounded-full py-4 text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-800 hover:bg-zinc-800 hover:text-white cursor-pointer mt-auto">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.linksight.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-800 rounded-full py-4 text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-800 hover:bg-zinc-800 hover:text-white mt-auto"
+                >
                   <span>Download Free</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
 
               {/* Card 2: LinkSight PRO */}
@@ -108,10 +113,15 @@ export default function PricingPage() {
                   </ul>
                 </div>
 
-                <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full py-4 text-sm font-semibold transition-all duration-300 shadow-md shadow-blue-600/10 hover:shadow-lg hover:shadow-blue-600/20 cursor-pointer mt-auto">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.linksight.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full py-4 text-sm font-semibold transition-all duration-300 shadow-md shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.03] mt-auto"
+                >
                   <span>Upgrade In-App</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
 
             </div>

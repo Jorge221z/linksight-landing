@@ -2,21 +2,15 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Menu, X, ArrowUpRight, ArrowRight } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog"
-import { BetaForm } from "@/components/beta-form"
+import Image from "next/image"
+
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.linksight.app"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [betaOpen, setBetaOpen] = useState(false)
   const isScrolled = true
   const router = useRouter()
   const pathname = usePathname()
@@ -123,37 +117,22 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-1">
-            <button
-              onClick={() => setBetaOpen(true)}
-              className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 transition-all duration-300 group overflow-hidden cursor-pointer ${
-                isScrolled ? "border-zinc-300" : "border-border"
-              }`}
+            <a
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80 duration-200 -my-[46px]"
+              aria-label="Download on Google Play"
             >
-              <span
-                className={`absolute inset-0 rounded-full scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-300 ${
-                  isScrolled ? "bg-black" : "bg-foreground"
-                }`}
+              <Image
+                src="/google-play-badge.svg"
+                alt="Get it on Google Play"
+                width={432}
+                height={128}
+                className="h-32 w-auto"
+                priority
               />
-              <span
-                className={`text-sm pr-3 relative z-10 transition-colors duration-300 ${
-                  isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
-                }`}
-              >
-                Join Closed Beta
-              </span>
-              <span className="w-8 h-8 rounded-full flex items-center justify-center relative z-10">
-                <ArrowRight
-                  className={`w-4 h-4 group-hover:opacity-0 absolute transition-opacity duration-300 ${
-                    isScrolled ? "text-black" : "text-foreground"
-                  }`}
-                />
-                <ArrowUpRight
-                  className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-                    isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
-                  }`}
-                />
-              </span>
-            </button>
+            </a>
           </div>
 
           <button
@@ -218,60 +197,28 @@ export function Header() {
             <div
               className={`flex flex-col gap-3 mt-4 pt-4 border-t ${isScrolled ? "border-zinc-200" : "border-border"}`}
             >
-              <button
-                onClick={() => { setBetaOpen(true); setIsOpen(false) }}
-                className={`relative flex items-center gap-0 border rounded-full pl-5 pr-1 py-1 w-fit transition-all duration-300 group overflow-hidden cursor-pointer ${
-                  isScrolled ? "border-zinc-300" : "border-border"
-                }`}
+              <a
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="transition-opacity hover:opacity-80 duration-200 w-fit -my-[46px]"
+                aria-label="Download on Google Play"
               >
-                <span
-                  className={`absolute inset-0 rounded-full scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-300 ${
-                    isScrolled ? "bg-black" : "bg-foreground"
-                  }`}
+                <Image
+                  src="/google-play-badge.svg"
+                  alt="Get it on Google Play"
+                  width={432}
+                  height={128}
+                  className="h-32 w-auto"
                 />
-                <span
-                  className={`text-sm pr-3 relative z-10 transition-colors duration-300 ${
-                    isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
-                  }`}
-                >
-                  Join Closed Beta
-                </span>
-                <span className="w-8 h-8 rounded-full flex items-center justify-center relative z-10">
-                  <ArrowRight
-                    className={`w-4 h-4 group-hover:opacity-0 absolute transition-opacity duration-300 ${
-                      isScrolled ? "text-black" : "text-foreground"
-                    }`}
-                  />
-                  <ArrowUpRight
-                    className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-                      isScrolled ? "text-black group-hover:text-white" : "text-foreground group-hover:text-background"
-                    }`}
-                  />
-                </span>
-              </button>
+              </a>
             </div>
           </nav>
         )}
       </div>
     </header>
 
-    {/* Modal Beta */}
-    <Dialog open={betaOpen} onOpenChange={setBetaOpen}>
-      <DialogContent className="sm:max-w-md rounded-2xl border border-zinc-200 p-6 sm:p-8">
-        <DialogHeader className="text-center sm:text-center mb-6">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-500 mb-3">
-            Closed Beta
-          </p>
-          <DialogTitle className="text-2xl font-normal font-serif text-zinc-900 leading-snug">
-            Get early access to LinkSight
-          </DialogTitle>
-          <DialogDescription className="text-zinc-500 text-sm leading-relaxed mt-2">
-            Join the closed beta and start calculating line of sight with unprecedented precision. We&apos;ll send you the Google Play invite directly.
-          </DialogDescription>
-        </DialogHeader>
-        <BetaForm />
-      </DialogContent>
-    </Dialog>
     </>
   )
 }
