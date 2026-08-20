@@ -45,6 +45,13 @@ export function Header() {
     }
   }
 
+  const handleInstantNavigation = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior })
+    }
+    setIsOpen(false)
+  }
+
   return (
     <>
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "px-4 pt-4" : ""}`}>
@@ -79,31 +86,25 @@ export function Header() {
             >
               Features
             </a>
-            <a
-              href="#use-cases"
-              onClick={(e) => handleSmoothScroll(e, "use-cases")}
-              className={`text-sm transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Use Cases
-            </a>
-            <a
-              href="#tools"
-              onClick={(e) => handleSmoothScroll(e, "tools")}
-              className={`text-sm transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Tools
-            </a>
             <Link
               href="/pricing"
+              scroll={false}
+              onClick={handleInstantNavigation}
               className={`text-sm transition-colors cursor-pointer ${
                 isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Pricing
+            </Link>
+            <Link
+              href="/blog"
+              scroll={false}
+              onClick={handleInstantNavigation}
+              className={`text-sm transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Blog
             </Link>
             <a
               href="#faq"
@@ -158,32 +159,25 @@ export function Header() {
             >
               Features
             </a>
-            <a
-              href="#use-cases"
-              onClick={(e) => handleSmoothScroll(e, "use-cases")}
-              className={`transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Use Cases
-            </a>
-            <a
-              href="#tools"
-              onClick={(e) => handleSmoothScroll(e, "tools")}
-              className={`transition-colors cursor-pointer ${
-                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Tools
-            </a>
             <Link
               href="/pricing"
-              onClick={() => setIsOpen(false)}
+              scroll={false}
+              onClick={handleInstantNavigation}
               className={`transition-colors cursor-pointer ${
                 isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Pricing
+            </Link>
+            <Link
+              href="/blog"
+              scroll={false}
+              onClick={handleInstantNavigation}
+              className={`transition-colors cursor-pointer ${
+                isScrolled ? "text-zinc-600 hover:text-black" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Blog
             </Link>
             <a
               href="#faq"

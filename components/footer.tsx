@@ -79,6 +79,14 @@ export function Footer({ minimal = false }: FooterProps) {
                 </li>
                 <li>
                   <Link
+                    href="/blog"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Blog & Guides
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/#faq"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
