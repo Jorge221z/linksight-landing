@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Geist_Mono, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { StructuredData } from "@/components/structured-data"
 import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
@@ -16,7 +17,6 @@ export const metadata: Metadata = {
     template: "%s | LinkSight",
   },
   description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
-  generator: "v0.app",
   keywords: [
     "RF planning",
     "microwave links",
@@ -28,10 +28,31 @@ export const metadata: Metadata = {
     "point to point link",
     "telecom calculator",
     "microwave link budget",
+    "Mobile RF planning",
+    "Mobile RF calculations",
+    "Mobile RF calculator",
+    "Mobile line of sight",
+    "Mobile Fresnel zone",
+    "Pocket RF planner",
+    "Smartphone RF planning",
+    "Mobile microwave link planning",
+    "Field engineer mobile tool",
+    "Android RF planning app",
+    "Android RF calculator",
+    "Mobile telecommunications calculator",
+    "Mobile elevation profile calculator",
+    "WISP tower planning",
+    "Meshtastic terrain calculator",
+    "LoRa link planning",
+    "Drone BVLOS terrain clearance",
+    "SRTM90m elevation profile"
   ],
-  authors: [{ name: "LinkSight" }],
-  creator: "LinkSight",
-  publisher: "LinkSight",
+  authors: [
+    { name: "Jorge Muñoz Castillo", url: "https://jorgemunoz.pro" },
+    { name: "LinkSight", url: "https://linksightapp.com" }
+  ],
+  creator: "Jorge Muñoz Castillo",
+  publisher: "Jorge Muñoz Castillo",
   alternates: {
     canonical: "/",
   },
@@ -85,6 +106,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ colorScheme: "light" }}>
+      <head>
+        <StructuredData />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

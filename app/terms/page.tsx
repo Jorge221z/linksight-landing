@@ -1,9 +1,22 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of Service for LinkSight mobile application and website.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "LinkSight - Terms of Service",
+    description: "Terms of Service for LinkSight mobile application and website.",
+    url: "https://linksightapp.com/terms",
+    images: ["/og-image.jpg"],
+  },
+}
 
 export default function TermsPage() {
   return (

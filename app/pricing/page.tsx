@@ -6,8 +6,23 @@ import { Check, ArrowRight, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Pricing",
-  description: "Simple, transparent pricing for LinkSight. Choose between our Basic and Pro plans, and start planning point-to-point microwave links today.",
+  title: "Pricing - Basic & Pro Plans",
+  description: "Simple, transparent pricing for LinkSight. Choose between our Free Basic plan and Pro plan for unlimited RF link calculations, PDF reports, and priority support.",
+  alternates: {
+    canonical: "/pricing",
+  },
+  openGraph: {
+    title: "LinkSight Pricing - Basic & Pro Plans",
+    description: "Simple, transparent pricing for LinkSight. Choose between our Free Basic plan and Pro plan for unlimited RF link calculations, PDF reports, and priority support.",
+    url: "https://linksightapp.com/pricing",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LinkSight Pricing - Basic & Pro Plans",
+    description: "Simple, transparent pricing for LinkSight. Free Basic and Pro plans for field engineers.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 export default function PricingPage() {

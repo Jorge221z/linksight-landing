@@ -1,9 +1,22 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for LinkSight mobile application and website.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "LinkSight - Privacy Policy",
+    description: "Privacy Policy for LinkSight mobile application and website.",
+    url: "https://linksightapp.com/privacy",
+    images: ["/og-image.jpg"],
+  },
+}
 
 export default function PrivacyPage() {
   return (
