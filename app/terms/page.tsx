@@ -69,7 +69,7 @@ export default function TermsPage() {
                   LinkSight offers a Freemium model. Users are granted a limited number of free calculations per day.
                 </li>
                 <li>
-                  Users may upgrade to &quot;LinkSight PRO&quot; via an auto-renewing subscription (e.g., €3.69/month) to unlock unlimited calculations and PDF reports.
+                  Users may upgrade to &quot;LinkSight PRO&quot; via an auto-renewing subscription (e.g., €3.59/month) to unlock unlimited calculations and PDF reports.
                 </li>
                 <li>
                   All payments, subscriptions, and transaction verifications are securely handled by Google Play Billing and managed via RevenueCat. We do not store or process your credit card information on our servers.

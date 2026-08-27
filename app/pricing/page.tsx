@@ -102,7 +102,7 @@ export default function PricingPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-blue-600 mb-2">LinkSight PRO</h3>
                   <div className="flex items-baseline gap-1 mb-8">
-                    <span className="text-5xl font-light text-slate-900">€3.69</span>
+                    <span className="text-5xl font-light text-slate-900">€3.59</span>
                     <span className="text-muted-foreground text-sm">/ month</span>
                   </div>
                   <p className="text-sm text-slate-500 mb-8 border-b border-zinc-100 pb-6">
