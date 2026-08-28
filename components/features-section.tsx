@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 import { RealtimePropertyCard } from "./realtime-property-card"
 
 const features = [
-  "Drop pins with exact GPS coordinates.",
+  "High-precision GPS coordinate & pin placement.",
   "5 free calculations every single day.",
-  "Adjustable mast heights and frequencies.",
-  "Visual clear/obstructed indicators.",
+  "Adjustable AGL antenna heights & custom frequencies.",
+  "Instant visual LOS & Fresnel clearance verdicts.",
 ]
 
 export function FeaturesSection() {

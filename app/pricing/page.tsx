@@ -73,7 +73,11 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm">Topographic profile visualization</span>
+                      <span className="text-sm">Topographic profile &amp; Fresnel zone analysis</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
+                      <span className="text-sm">Custom RF spectrum &amp; presets (100 MHz – 60 GHz)</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
@@ -119,11 +123,11 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm">Export professional PDF reports</span>
+                      <span className="text-sm">Client-ready PDF feasibility reports with company branding</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-sm">Priority support</span>
+                      <span className="text-sm">Priority engineering support</span>
                     </li>
                   </ul>
                 </div>

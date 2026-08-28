@@ -12,12 +12,12 @@ const services = [
   {
     icon: Radio,
     title: "Fresnel Intelligence",
-    description: "Precise Fresnel zone algorithms for 2.4GHz, 5.8GHz, LoRa and more.",
+    description: "Precise Fresnel zone clearance calculations across sub-GHz, Wi-Fi, microwave, and custom frequencies (100 MHz – 60 GHz).",
   },
   {
     icon: FileText,
-    title: "Pro PDF Reports",
-    description: "Generate and share feasibility studies with your client or team in a single tap.",
+    title: "Client-Ready PDF Reports",
+    description: "Export complete engineering feasibility studies with elevation profiles, clearance metrics, and company branding in a single tap.",
   },
 ]
 

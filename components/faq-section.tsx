@@ -4,12 +4,12 @@ const faqs = [
   {
     question: "Is it really free?",
     answer:
-      "Yes! You get 5 free calculations every single day, for life. No credit card required. Perfect for hobbyists, drone pilots, and casual planning.",
+      "Yes! You get 5 free calculations every single day, for life. This includes full access to all frequency presets, custom spectrum inputs (100 MHz – 60 GHz), and elevation graphs. No credit card required.",
   },
   {
     question: "What is included in LinkSight Pro?",
     answer:
-      "LinkSight Pro includes unlimited daily calculations, the ability to generate and export professional PDF feasibility reports with your company logo, and priority support.",
+      "LinkSight Pro includes unlimited daily calculations, the ability to generate and export client-ready PDF feasibility reports with company branding, and priority engineering support.",
   },
   {
     question: "Where does the elevation data come from?",
