@@ -1,20 +1,20 @@
 # LinkSight
 
-> Precision RF link planning and Fresnel zone clearance calculations on Android mobile devices. Built for field engineers, WISP operators, Meshtastic/LoRa networks, and drone pilots.
+> Instant Line of Sight. Zero Guesswork. Verify point-to-point wireless viability with global SRTM topographic data on Android, straight from your pocket.
 
 ## Overview
 LinkSight is a native Android mobile application designed for instant point-to-point microwave link planning and line-of-sight (LOS) analysis directly in the field. It uses global SRTM90m topography data to calculate terrain elevation profiles and Fresnel zone obstructions with sub-second latency.
 
 ## Key Features
 - **Line of Sight (LOS) Analysis**: Instant terrain elevation profile calculations between two GPS coordinates using SRTM90m global data.
-- **Fresnel Zone Clearance**: Real-time Fresnel zone calculation and obstruction detection across standard frequencies (2.4 GHz, 5.8 GHz, Sub-GHz 868 MHz) and custom frequencies.
-- **Interactive Map & Mast Height Tuning**: Interactive GPS coordinate pin-dropping with dynamic antenna mast height adjustments.
-- **Professional PDF Reports**: One-tap export of comprehensive RF feasibility study reports with elevation charts, link budgets, and technical metrics.
-- **Cloud Topography**: Millisecond profile downloads without requiring gigabytes of offline maps.
+- **Fresnel Zone Clearance**: Real-time Fresnel zone calculation and obstruction detection across standard frequency presets (2.4 GHz, 5.8 GHz, 6.0 GHz, Sub-GHz 868/915 MHz) and arbitrary custom RF spectrum (100 MHz – 60 GHz).
+- **Interactive Map & Mast Height Tuning**: Interactive GPS coordinate pin-dropping with dynamic antenna mast height (AGL) adjustments.
+- **Client-Ready PDF Reports**: One-tap export of comprehensive engineering feasibility study reports with elevation charts, clearance verdicts, and company branding.
+- **Cloud Topography Engine**: Millisecond profile downloads without requiring gigabytes of offline maps on the device.
 
 ## Target Users & Use Cases
 - **WISP Operators**: Plan broadband point-to-point microwave links and verify tower heights before dispatching installation crews.
-- **Meshtastic & LoRa Networks**: Design off-grid mesh networks and ensure sub-GHz signal path through complex terrain.
+- **Meshtastic & LoRa Networks**: Design off-grid mesh networks and ensure sub-GHz signal paths through complex terrain.
 - **UAV & Drone Pilots (BVLOS)**: Verify telemetry and video link line-of-sight across terrain obstacles.
 - **RF & Telecom Engineers**: Custom frequency and mast height calculations for amateur radio, public safety, and proprietary wireless networks.
 
@@ -22,11 +22,12 @@ LinkSight is a native Android mobile application designed for instant point-to-p
 - **Platform**: Android Native (Kotlin)
 - **Elevation Data**: SRTM90m (Shuttle Radar Topography Mission, 90-meter global resolution)
 - **Calculation Latency**: <250ms
-- **Pricing**: Free tier (5 calculations/day, no credit card required) & Pro tier (unlimited calculations, PDF exports, priority support).
+- **Pricing**: Free tier (5 calculations/day, all frequency bands & custom inputs, no credit card required) & Pro tier (unlimited calculations, client-ready PDF exports, priority support).
 
 ## Links
 - Website: https://linksightapp.com
 - Google Play Store: https://play.google.com/store/apps/details?id=com.linksight.app
 - Pricing: https://linksightapp.com/pricing
 - Privacy Policy: https://linksightapp.com/privacy
+- Account Deletion: https://linksightapp.com/account-deletion
 - Developer: Jorge Muñoz Castillo (https://jorgemunoz.pro)

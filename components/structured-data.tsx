@@ -20,12 +20,12 @@ export function StructuredData() {
         "name": "LinkSight",
         "operatingSystem": "Android",
         "applicationCategory": "UtilitiesApplication",
-        "description": "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
+        "description": "Instant Line of Sight. Zero Guesswork. Verify point-to-point wireless viability with global SRTM topographic data, straight from your pocket.",
         "url": "https://linksightapp.com",
         "installUrl": "https://play.google.com/store/apps/details?id=com.linksight.app",
         "image": "https://linksightapp.com/og-image.jpg",
         "screenshot": "https://linksightapp.com/calc_graph.png",
-        "softwareVersion": "1.0",
+        "softwareVersion": "1.1.0",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -40,9 +40,9 @@ export function StructuredData() {
         "featureList": [
           "Instant Point-to-Point Line of Sight (LOS) calculation",
           "Elevation Profile using SRTM90m global topography",
-          "Fresnel Zone clearance analysis for 2.4GHz, 5.8GHz and Sub-GHz",
-          "Professional PDF feasibility study export",
-          "Custom antenna mast heights and frequency adjustment"
+          "Fresnel Zone clearance analysis across 100 MHz – 60 GHz",
+          "Client-ready PDF feasibility study reports with company branding",
+          "Adjustable AGL antenna mast heights and custom RF spectrum"
         ]
       },
       {
@@ -65,7 +65,7 @@ export function StructuredData() {
             "name": "Is it really free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! You get 5 free calculations every single day, for life. No credit card required. Perfect for hobbyists, drone pilots, and casual planning."
+              "text": "Yes! You get 5 free calculations every single day, for life. This includes full access to all frequency presets, custom spectrum inputs (100 MHz – 60 GHz), and elevation graphs. No credit card required."
             }
           },
           {
@@ -73,7 +73,7 @@ export function StructuredData() {
             "name": "What is included in LinkSight Pro?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "LinkSight Pro includes unlimited daily calculations, the ability to generate and export professional PDF feasibility reports with your company logo, and priority support."
+              "text": "LinkSight Pro includes unlimited daily calculations, the ability to generate and export client-ready PDF feasibility reports with company branding, and priority engineering support."
             }
           },
           {

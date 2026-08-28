@@ -13,10 +13,10 @@ const _playfair = Playfair_Display({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://linksightapp.com"),
   title: {
-    default: "LinkSight - RF Link Planning in Your Pocket",
+    default: "LinkSight - Instant Line of Sight & RF Planning",
     template: "%s | LinkSight",
   },
-  description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
+  description: "Instant Line of Sight. Zero Guesswork. Verify point-to-point wireless viability with global SRTM topographic data, straight from your pocket.",
   keywords: [
     "RF planning",
     "microwave links",
@@ -45,7 +45,9 @@ export const metadata: Metadata = {
     "Meshtastic terrain calculator",
     "LoRa link planning",
     "Drone BVLOS terrain clearance",
-    "SRTM90m elevation profile"
+    "SRTM90m elevation profile",
+    "Custom RF spectrum",
+    "Client-ready PDF reports"
   ],
   authors: [
     { name: "Jorge Muñoz Castillo", url: "https://jorgemunoz.pro" },
@@ -57,8 +59,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "LinkSight - RF Link Planning in Your Pocket",
-    description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
+    title: "LinkSight - Instant Line of Sight & RF Planning",
+    description: "Instant Line of Sight. Zero Guesswork. Verify point-to-point wireless viability with global SRTM topographic data, straight from your pocket.",
     url: "https://linksightapp.com",
     siteName: "LinkSight",
     images: [
@@ -66,7 +68,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "LinkSight - RF Link Planning on Mobile",
+        alt: "LinkSight - Instant Line of Sight & RF Planning",
       },
     ],
     locale: "en_US",
@@ -74,8 +76,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LinkSight - RF Link Planning in Your Pocket",
-    description: "Plan point-to-point microwave links and calculate Fresnel zones instantly from your phone. Built for field engineers.",
+    title: "LinkSight - Instant Line of Sight & RF Planning",
+    description: "Instant Line of Sight. Zero Guesswork. Verify point-to-point wireless viability with global SRTM topographic data, straight from your pocket.",
     images: ["/og-image.jpg"],
   },
   robots: {
