@@ -126,6 +126,14 @@ export function Footer({ minimal = false }: FooterProps) {
                     Terms of Service
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/account-deletion"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Account Deletion
+                  </Link>
+                </li>
               </ul>
             </div>
 
