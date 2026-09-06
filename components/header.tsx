@@ -56,7 +56,7 @@ export function Header() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer">
+          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer shrink-0">
             <img
               src="/images/ic_logo_playstore.png"
               alt="LinkSight Logo"
@@ -68,6 +68,26 @@ export function Header() {
               LinkSight
             </span>
           </Link>
+
+          {/* Mobile/Tablet Google Play Badge - Centrado entre logo y menú */}
+          <div className="flex md:hidden flex-1 items-center justify-center px-1">
+            <a
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80 duration-200 -my-[34px] sm:-my-[40px]"
+              aria-label="Download on Google Play"
+            >
+              <Image
+                src="/google-play-badge.svg"
+                alt="Get it on Google Play"
+                width={432}
+                height={128}
+                className="h-24 sm:h-28 w-auto"
+                priority
+              />
+            </a>
+          </div>
 
           <nav className="hidden md:flex items-center gap-8">
             <a
@@ -106,12 +126,13 @@ export function Header() {
             </a>
           </nav>
 
+          {/* Desktop Google Play Badge */}
           <div className="hidden md:flex items-center gap-1">
             <a
               href={GOOGLE_PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-80 duration-200 -my-[46px]"
+              className="transition-opacity hover:opacity-80 duration-200 -my-[52px]"
               aria-label="Download on Google Play"
             >
               <Image
@@ -119,15 +140,17 @@ export function Header() {
                 alt="Get it on Google Play"
                 width={432}
                 height={128}
-                className="h-32 w-auto"
+                className="h-36 w-auto"
                 priority
               />
             </a>
           </div>
 
+          {/* Mobile Hamburger Button */}
           <button
-            className={`md:hidden transition-colors duration-300 ${isScrolled ? "text-black" : "text-foreground"}`}
+            className={`md:hidden transition-colors duration-300 shrink-0 ${isScrolled ? "text-black" : "text-foreground"}`}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
