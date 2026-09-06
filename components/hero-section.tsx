@@ -154,11 +154,11 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <div className="hero-title-anim">
-            <h1 className={`${spaceGrotesk.className} text-[1.75rem] min-[390px]:text-[2rem] sm:text-[3rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.8rem] font-bold leading-[1.15] mb-4 sm:mb-6 w-full px-2 sm:px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-1 sm:gap-2`}>
+            <h1 className={`${spaceGrotesk.className} text-[1.75rem] min-[390px]:text-[2rem] sm:text-[2.75rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.8rem] font-bold leading-[1.15] mb-4 sm:mb-6 w-full px-2 sm:px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-1 sm:gap-2`}>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Instant Line of Sight." delay={0.3} /></span>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Zero Guesswork." delay={0.5} /></span>
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base md:text-xl max-w-2xl mx-auto leading-relaxed text-balance mt-3 sm:mt-4">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed text-balance mt-3 sm:mt-4">
               Verify point-to-point wireless viability with global SRTM topographic data, straight from your pocket.
             </p>
           </div>
