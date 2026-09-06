@@ -97,7 +97,7 @@ export function HeroSection() {
             clipPath: `inset(0% 0% ${clipBottom}% 0% round ${borderRadius}px)`,
           }}
         >
-          <video ref={videoRef} autoPlay muted defaultMuted playsInline loop className="w-full h-full object-cover">
+          <video ref={videoRef} autoPlay muted playsInline loop className="w-full h-full object-cover">
             <source src="/hero-bg.webm" type="video/webm" />
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
@@ -154,7 +154,7 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="text-center mb-12">
           <div className="hero-title-anim">
-            <h1 className={`${spaceGrotesk.className} text-[2.2rem] min-[380px]:text-[2.6rem] sm:text-[3.8rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7.5rem] font-bold leading-[1.15] mb-6 w-full px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-2`}>
+            <h1 className={`${spaceGrotesk.className} text-[2.2rem] min-[380px]:text-[2.6rem] sm:text-[3.8rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.8rem] font-bold leading-[1.15] mb-6 w-full px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-2`}>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Instant Line of Sight." delay={0.3} /></span>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Zero Guesswork." delay={0.5} /></span>
             </h1>
