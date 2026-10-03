@@ -154,6 +154,32 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <div className="hero-title-anim">
+            <div className="flex justify-center mb-5 sm:mb-7">
+              <a
+                href="https://microlaunch.net/p/linksight?utm_source=badge-winner-microlaunch&utm_medium=badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-neutral-200/90 bg-white/95 px-3 py-1.5 sm:px-4 sm:py-1.5 shadow-[0_2px_6px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:shadow-md focus:outline-none"
+              >
+                <img
+                  src="/images/microlaunch-icon.png"
+                  alt="MicroLaunch"
+                  className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full shrink-0 shadow-xs"
+                  width={22}
+                  height={22}
+                />
+                <span className="text-[11.5px] sm:text-xs font-bold text-neutral-900 tracking-tight">
+                  #1 Product of the Day
+                </span>
+                <span className="text-neutral-300 text-[11px] sm:text-xs hidden min-[380px]:inline">
+                  ·
+                </span>
+                <span className="text-[11.5px] sm:text-xs font-medium text-neutral-500 group-hover:text-purple-600 transition-colors hidden min-[380px]:inline">
+                  MicroLaunch
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-purple-600 transition-colors duration-200 shrink-0 ml-0.5" />
+              </a>
+            </div>
             <h1 className={`${spaceGrotesk.className} text-[1.75rem] min-[390px]:text-[2rem] sm:text-[2.75rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.8rem] font-bold leading-[1.15] mb-4 sm:mb-6 w-full px-2 sm:px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-1 sm:gap-2`}>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Instant Line of Sight." delay={0.3} /></span>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Zero Guesswork." delay={0.5} /></span>

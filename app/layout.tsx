@@ -1,12 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Geist_Mono, Playfair_Display } from "next/font/google"
+import { Inter, Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { StructuredData } from "@/components/structured-data"
 import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+})
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -107,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "light" }}>
+    <html lang="en" className={geistSans.variable} style={{ colorScheme: "light" }}>
       <head>
         <StructuredData />
       </head>

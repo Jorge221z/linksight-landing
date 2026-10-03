@@ -56,17 +56,15 @@ export function Header() {
         }`}
       >
         <div className="flex items-center justify-between">
-          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer shrink-0">
+          <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer shrink-0 group">
             <img
               src="/images/ic_logo_playstore.png"
               alt="LinkSight Logo"
-              className="w-10 h-10 object-cover rounded-[22%] shadow-sm"
+              className="w-10 h-10 object-cover rounded-[22%] shadow-sm transition-shadow duration-300 group-hover:shadow-md"
             />
-            <span
-              className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-black" : "text-foreground"}`}
-            >
+            <h2 className="text-xl font-[550] font-geist font-[family-name:var(--font-geist-sans)] text-neutral-800 dark:text-neutral-200 tracking-tight transition-colors duration-300 group-hover:text-neutral-600 dark:group-hover:text-neutral-400">
               LinkSight
-            </span>
+            </h2>
           </Link>
 
           {/* Mobile/Tablet Google Play Badge - Centrado entre logo y menú */}
