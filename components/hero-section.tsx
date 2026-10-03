@@ -154,7 +154,7 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <div className="hero-title-anim">
-            <div className="flex justify-center mb-5 sm:mb-7">
+            <div className="flex justify-center md:-mt-3 lg:-mt-4 mb-4 sm:mb-5">
               <a
                 href="https://microlaunch.net/p/linksight?utm_source=badge-winner-microlaunch&utm_medium=badge"
                 target="_blank"
@@ -180,7 +180,7 @@ export function HeroSection() {
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-purple-600 transition-colors duration-200 shrink-0 ml-0.5" />
               </a>
             </div>
-            <h1 className={`${spaceGrotesk.className} text-[1.75rem] min-[390px]:text-[2rem] sm:text-[2.75rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.8rem] font-bold leading-[1.15] mb-4 sm:mb-6 w-full px-2 sm:px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-1 sm:gap-2`}>
+            <h1 className={`${spaceGrotesk.className} text-[1.75rem] min-[390px]:text-[2rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.85rem] xl:text-[4.35rem] 2xl:text-[4.75rem] font-bold leading-[1.15] mb-4 sm:mb-6 w-full px-2 sm:px-4 max-w-7xl mx-auto text-black flex flex-col items-center gap-1 sm:gap-2`}>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Instant Line of Sight." delay={0.3} /></span>
               <span className="block lg:whitespace-nowrap max-w-full"><AnimatedText text="Zero Guesswork." delay={0.5} /></span>
             </h1>
