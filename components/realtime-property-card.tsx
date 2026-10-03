@@ -134,16 +134,12 @@ function CardFace({ scenario }: { scenario: typeof scenarios.viable }) {
 /* ─── Componente principal ─── */
 export function RealtimePropertyCard() {
   const [isFlipped, setIsFlipped] = useState(false)
-  const [scenario, setScenario] = useState<"viable" | "blocked">("viable")
 
   const handleFlip = () => {
     setIsFlipped((prev) => !prev)
-    // Cambia los datos a mitad del giro (cuando la tarjeta está de lado)
-    setTimeout(() => setScenario((s) => (s === "viable" ? "blocked" : "viable")), 300)
   }
 
-  const current = scenarios[scenario]
-  const nextLabel = scenario === "viable" ? "Obstructed" : "Viable"
+  const nextLabel = isFlipped ? "Viable" : "Obstructed"
 
   return (
     <motion.div
@@ -153,16 +149,26 @@ export function RealtimePropertyCard() {
       viewport={{ once: true }}
       className="w-full flex flex-col gap-3"
     >
-      {/* Toggle button */}
+      {/* Toggle button with subtle live beacon indicator */}
       <div className="flex justify-end">
         <motion.button
           onClick={handleFlip}
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm hover:border-slate-300 hover:text-slate-900 transition-colors cursor-pointer select-none"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="group relative inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold bg-white border border-slate-200/90 text-slate-700 shadow-xs hover:border-blue-300 hover:shadow-md hover:text-slate-900 transition-all duration-300 cursor-pointer select-none"
         >
-          <ArrowLeftRight className="w-3.5 h-3.5" />
-          Test {nextLabel} Link
+          {/* Subtle pulsing live indicator */}
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+          </span>
+
+          <span className="text-slate-500 font-medium hidden min-[360px]:inline">Interactive:</span>
+          <span className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+            Flip to {nextLabel} Link
+          </span>
+
+          <ArrowLeftRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 group-hover:rotate-180 transition-all duration-500 ml-0.5" />
         </motion.button>
       </div>
 
@@ -174,15 +180,19 @@ export function RealtimePropertyCard() {
           style={{ transformStyle: "preserve-3d", position: "relative" }}
           className="w-full"
         >
-          {/* FRONT */}
+          {/* FRONT (Link Viable) */}
           <div
-            style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+            style={{
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              pointerEvents: isFlipped ? "none" : "auto",
+            }}
             className="w-full rounded-2xl shadow-[rgba(14,63,126,0.04)_0px_0px_0px_1px,rgba(42,51,69,0.04)_0px_1px_1px_-0.5px,rgba(42,51,70,0.04)_0px_3px_3px_-1.5px,rgba(42,51,70,0.04)_0px_6px_6px_-3px,rgba(14,63,126,0.04)_0px_12px_12px_-6px,rgba(14,63,126,0.04)_0px_24px_24px_-12px]"
           >
-            <CardFace scenario={current} />
+            <CardFace scenario={scenarios.viable} />
           </div>
 
-          {/* BACK (rotado 180° en Y, contenido espejado para que se vea bien al girar) */}
+          {/* BACK (Link Obstructed — rotated 180° in Y so it faces backwards initially and turns forward on flip) */}
           <div
             style={{
               backfaceVisibility: "hidden",
@@ -190,10 +200,11 @@ export function RealtimePropertyCard() {
               transform: "rotateY(180deg)",
               position: "absolute",
               inset: 0,
+              pointerEvents: isFlipped ? "auto" : "none",
             }}
             className="w-full rounded-2xl shadow-[rgba(14,63,126,0.04)_0px_0px_0px_1px,rgba(42,51,69,0.04)_0px_1px_1px_-0.5px,rgba(42,51,70,0.04)_0px_3px_3px_-1.5px,rgba(42,51,70,0.04)_0px_6px_6px_-3px,rgba(14,63,126,0.04)_0px_12px_12px_-6px,rgba(14,63,126,0.04)_0px_24px_24px_-12px]"
           >
-            <CardFace scenario={current} />
+            <CardFace scenario={scenarios.blocked} />
           </div>
         </motion.div>
       </div>
