@@ -49,7 +49,7 @@ Even if a small hill in the center of the valley leaves a visual gap above its c
 
 ## 3. The Nightmare of Field Calculations
 
-Most off-grid network builders eventually discover this concept and try to verify terrain elevation before deploying a permanent node. But doing this on a smartphone while standing on a windy mountain peak is a frustrating ordeal:
+Most off-grid network builders eventually discover this concept and try to verify terrain elevation before deploying a permanent node using an [RF Line of Sight calculator](/blog/best-rf-line-of-sight-calculators). But doing this on a smartphone while standing on a windy mountain peak is a frustrating ordeal:
 
 * **Laggy Desktop Web Tools:** Legacy RF calculation websites are built for desktop mouse-and-keyboard setups, not mobile touchscreens.
 * **High Data Usage & Crashes:** Loading gigabytes of heavy satellite tiles on a weak 4G connection often causes mobile browsers to freeze.
@@ -65,4 +65,32 @@ With LinkSight:
 2. **Instant SRTM90m Elevation Profiles:** Download accurate global topographic profiles in milliseconds without eating up storage.
 3. **Automated Fresnel Overlays:** View instant clearance percentages for **868 MHz, 915 MHz, 2.4 GHz, 5.8 GHz**, or custom frequencies.
 4. **Real-Time Mast Height Tuning:** Slide your antenna mast height up and down to see exactly how many meters of elevation you need to clear the ridge.
+
+## Related Articles
+
+<div class="blog-related-grid not-prose">
+  <a href="/blog/best-rf-line-of-sight-calculators" class="blog-related-card group">
+    <div>
+      <span class="blog-related-card-badge">Tools &bull; Comparison</span>
+      <h3 class="blog-related-card-title">Top 5 RF Line of Sight Calculators (And Why Desktop Tools Fail in the Field)</h3>
+      <p class="blog-related-card-desc">Review and compare the top tools like airLink, HeyWhatThat, and Radio Mobile against mobile-first alternatives.</p>
+    </div>
+    <div class="blog-related-card-footer">
+      <span>Read article</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <a href="/blog/fpv-long-range-line-of-sight" class="blog-related-card group">
+    <div>
+      <span class="blog-related-card-badge">FPV &bull; Long Range</span>
+      <h3 class="blog-related-card-title">The Ultimate Guide to Line of Sight (LOS) for Long Range FPV</h3>
+      <p class="blog-related-card-desc">Learn how terrain profiles and Fresnel zones impact 5.8GHz video feeds and 900MHz control links in the field.</p>
+    </div>
+    <div class="blog-related-card-footer">
+      <span>Read article</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+</div>
 

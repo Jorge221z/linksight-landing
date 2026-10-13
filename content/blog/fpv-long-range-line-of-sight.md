@@ -41,7 +41,7 @@ If the centerline between your ground station and your aircraft is clear, but te
 
 ## 3. How to Check Terrain Clearance Before You Fly
 
-Traditionally, verifying topographic clearance required setting up complex desktop software like Google Earth, Radio Mobile, or HeyWhatsThat at home before heading out to the field.
+Traditionally, verifying topographic clearance required setting up complex desktop software like Google Earth, Radio Mobile, or HeyWhatsThat at home before heading out to the field (see our breakdown of the [top RF Line of Sight calculators](/blog/best-rf-line-of-sight-calculators)).
 
 However, long-range FPV missions are dynamic. You drive out to a mountain valley, spot an epic ridge or gap, and ask yourself: 
 
@@ -63,3 +63,31 @@ To maximize link budget and avoid equipment loss, keep these field rules in mind
 * **Launch from Elevated Ground:** Whenever possible, position your ground station on the highest local point. Elevating your receiver antennas naturally lifts the entire Fresnel envelope above nearby ground obstacles.
 * **Plan Your Ridge Dives with Escape Vectors:** If you intend to dive behind a ridge, your direct LOS will break. Always ensure you have sufficient battery, airspeed, and altitude to punch back above the line of sight, or carve a flight path that maintains an angle to your receiver.
 * **Verify Elevation Profiles Before Arming:** Spend 30 seconds plotting your route in LinkSight. Knowing the exact minimum altitude needed to clear critical ridges gives you complete peace of mind to focus on cinematic flying.
+
+## Related Articles
+
+<div class="blog-related-grid not-prose">
+  <a href="/blog/best-rf-line-of-sight-calculators" class="blog-related-card group">
+    <div>
+      <span class="blog-related-card-badge">Tools &bull; Comparison</span>
+      <h3 class="blog-related-card-title">Top 5 RF Line of Sight Calculators (And Why Desktop Tools Fail in the Field)</h3>
+      <p class="blog-related-card-desc">Compare the most popular RF path planners and see why native mobile tools outperform desktop software on the flight line.</p>
+    </div>
+    <div class="blog-related-card-footer">
+      <span>Read article</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <a href="/blog/why-meshtastic-node-fails-line-of-sight" class="blog-related-card group">
+    <div>
+      <span class="blog-related-card-badge">Meshtastic &bull; LoRa</span>
+      <h3 class="blog-related-card-title">Why Your Meshtastic Node Fails Despite Having Line of Sight</h3>
+      <p class="blog-related-card-desc">Discover why optical visibility isn't enough and how the 60% Fresnel zone clearance rule applies to sub-GHz telemetry and control links.</p>
+    </div>
+    <div class="blog-related-card-footer">
+      <span>Read article</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+</div>
